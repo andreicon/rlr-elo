@@ -5,14 +5,21 @@ const shuffle = require('./shuffle');
 
 const elo = new EloRank(15);
 
-// generate combinations of drivers from testData
+console.log("INPUT DATA:")
+console.log(testData)
+console.log("==========================================================")
+console.log("")
+
+// randomize the data to get fake race results
 const drivers = shuffle(testData);
 
-console.log(drivers)
+console.log("RACE RESULTS:")
+console.log(testData)
+console.log("==========================================================")
+console.log("")
 
+// generate 1v1 combinations to calculate elo change
 const combinations = Combinatorics.Combination.of(drivers, 2).toArray();
-
-console.log(combinations)
 
 combinations.map(combination => {
 
@@ -24,4 +31,13 @@ combinations.map(combination => {
 
 })
 
-console.log(testData);
+// sort testdata by rating
+
+const sortedData = testData.sort((a, b) => {
+  return b.rating - a.rating;
+})
+
+console.log("FINAL ELO RESULTS:")
+console.log(sortedData)
+console.log("==========================================================")
+console.log("")

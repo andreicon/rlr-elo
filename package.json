@@ -5,6 +5,11 @@
   "license": "MIT",
   "dependencies": {
     "elo-rank": "^1.0.4",
-    "js-combinatorics": "^2.1.1"
+    "js-combinatorics": "^2.1.1",
+    "mocha": "^10.0.0",
+    "trueskill": "^0.0.2"
+  },
+  "scripts": {
+    "test": "mocha"
   }
 }
